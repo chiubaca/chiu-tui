@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 import { createCliRenderer, TextAttributes } from "@opentui/core";
 import { createRoot } from "@opentui/react";
 import { useState, useEffect } from "react";
@@ -5,10 +6,10 @@ import { useKeyboard, useTimeline } from "@opentui/react";
 import { spawn } from "bun";
 
 const links = [
-  { label: "bluesky", url: "https://bsky.app/placeholder" },
-  { label: "x", url: "https://x.com/placeholder" },
-  { label: "linkedin", url: "https://linkedin.com/in/placeholder" },
-  { label: "website", url: "https://chiubaca.com" },
+  { label: "linkedin", url: "https://www.linkedin.com/in/achiu1/" },
+  { label: "bluesky", url: "https://bsky.app/profile/chiubaca.com" },
+  { label: "x", url: "https://x.com/chiubaca" },
+  { label: "website", url: "https://chiubaca.com/" },
 ];
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
         setSelectedIndex((i) => (i < links.length - 1 ? i + 1 : 0));
         break;
       case "enter":
-        console.log("Opening:", links[selectedIndex].url);
+        spawn(["open", links[selectedIndex].url]);
         break;
     }
   });
