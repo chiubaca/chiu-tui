@@ -5,24 +5,15 @@ import { useKeyboard, useTimeline } from "@opentui/react";
 import { spawn } from "bun";
 
 const links = [
-  { label: "x", url: "https://x.com/placeholder" },
   { label: "bluesky", url: "https://bsky.app/placeholder" },
+  { label: "x", url: "https://x.com/placeholder" },
   { label: "linkedin", url: "https://linkedin.com/in/placeholder" },
   { label: "website", url: "https://chiubaca.com" },
 ];
 
-const spinnerChars = [">", "-"];
-
 function App() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [spinIndex, setSpinIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSpinIndex((i) => (i + 1) % spinnerChars.length);
-    }, 300);
-    return () => clearInterval(interval);
-  }, []);
 
   useKeyboard((key) => {
     switch (key.name) {
@@ -53,14 +44,13 @@ function App() {
         <text attributes={TextAttributes.DIM}>fullstack developer</text>
         <box padding={1}>
           <text attributes={TextAttributes.ITALIC}>
-            dreaming, building, learning
+            dreaming - building - learning
           </text>
         </box>
-        <box flexDirection="column" alignItems="center" marginTop={1}>
-          <text>
+        <box flexDirection="row" gap={1} padding={1}>
+          <text attributes={TextAttributes.BOLD}>
             {links.map((link, i) => (
               <span key={link.label}>
-                {i === selectedIndex ? spinnerChars[spinIndex] + " " : "  "}
                 {i === selectedIndex ? (
                   <span bg="#ffffff" fg="#342b2b">
                     {link.label}
