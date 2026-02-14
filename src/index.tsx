@@ -15,14 +15,13 @@ const COLORS = {
 };
 
 const links = [
-  { label: "linkedin", url: "https://www.linkedin.com/in/achiu1/", icon: "in" },
+  { label: "linkedin", url: "https://www.linkedin.com/in/achiu1/" },
   {
     label: "bluesky",
     url: "https://bsky.app/profile/chiubaca.com",
-    icon: "bsky",
   },
-  { label: "x", url: "https://x.com/chiubaca", icon: "x" },
-  { label: "website", url: "https://chiubaca.com/", icon: "globe" },
+  { label: "x", url: "https://x.com/chiubaca" },
+  { label: "website", url: "https://chiubaca.com/" },
 ];
 
 function App() {
@@ -51,10 +50,10 @@ function App() {
         flexDirection="column"
         alignItems="center"
         border
-        paddingX={4}
-        paddingY={2}
-        borderStyle="rounded"
+        borderStyle="double"
         borderColor={COLORS.primary}
+        paddingX={12}
+        paddingY={2}
       >
         <box paddingTop={1}>
           <ascii-font font="tiny" text="chiubaca" />
