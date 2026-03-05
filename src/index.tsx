@@ -15,13 +15,13 @@ const COLORS = {
 };
 
 const links = [
-  { label: "linkedin", url: "https://www.linkedin.com/in/achiu1/" },
+  { label: "x", url: "https://x.com/chiubaca" },
   {
     label: "bluesky",
     url: "https://bsky.app/profile/chiubaca.com",
   },
-  { label: "x", url: "https://x.com/chiubaca" },
   { label: "website", url: "https://chiubaca.com/" },
+  { label: "linkedin", url: "https://www.linkedin.com/in/achiu1/" },
 ];
 
 function App() {
